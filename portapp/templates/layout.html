@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if title %}
+  <title>Zawadiana {{title}}</title>
+  {% else %}
+    <title> Zawadiana</title>
+  {% endif %}
+
+  {% block styles %}
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->| Like images | **Add likes to an image** | Users can add likes to images they like|
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+  <link rel="stylesheet" href="{% static 'css/basenews.css' %}">
+  <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+  {% endblock %}
+  <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+
+</head>
+
+<body class="grey lighten-5">
+  {% include "navbar.html" %}
+
+  {% block content %} 
+  <div class="jumbotron jumbotron-fluid bg-light mb-1 pb-3 pt-3">
+    <div class="">
+      <h2 class="display-5 text-center font-weight-bold text-white">Welcome to Awards</h2>
+    </div>
+  </div>
+  {%endblock%}
+
+  {% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="{% static 'script.js' %}"></script>
+  {% endblock %}
+
+</body>
+
+</html>

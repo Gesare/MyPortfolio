@@ -1,0 +1,72 @@
+{%extends 'layout.html'%}
+
+{% block content %}
+
+<div style="background:url('/media/images/a1.png'); height: 100vh; background-size: cover; background-position: center;"> 
+  <div id="intro">
+    <div class="mask rgba-black-strong" style="height: 100vh;">
+      <div class="container-fluid d-flex align-items-center justify-content-center h-50">
+        <div class="row d-flex justify-content-center text-center">
+          <div class="col-lg-12 pt-5 mt-5">
+          <br><br><br><br>
+           <!-- Heading -->
+              <h3 class="display-4 font-weight-bold white-text pt-5">Welcome to Zawadiana</h3>
+              <!-- Divider -->
+              <hr class="hr-light">
+              <p class="font-weight-bold white-text">We give you a platform to submit your sites and get RATINGS. </p>
+               <a class= "btn btn-warning btn-lg font-weight-bold" href="{%url 'new-project'%}">SUBMIT YOUR SITE </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pt-4 mt-4"></div>
+
+<!-- end of landing layout -->
+<div class="container-fluid">
+  <div class="mb-2 pb-2 pl-4 pr-2 ml-4 mr-1">
+    <h4 style="text-align: center;" class="display-6 font-weight-bold"> Sites of the day </h4>
+    <hr>
+  </div>
+
+  <div class="row pl-2 pr-2 ml-1 mr-1">
+    {% for project_item in projects %}
+      <div class="col-lg-4">
+        <div class="card-deck">
+          <div class="card mb-2 mt-2">
+            <!-- Card image -->
+            <div class="view overlay zoom">
+              {% if project_item.project_image %}
+              <a href="/project/{{project_item.id}}">
+                <img class="card-img-top" src="{{project_item.project_image.url}}" alt="{{ project_item.project_name }}" height="300px">
+              </a>
+              {% else %}
+              <a href="/project/{{project_item.id}}">
+                <img  class="card-img-top" src="../../static/images/default.png" alt="{{ project_item.project_name }}">
+                <p id="overlay"class="text"> 
+                  <button class="btn btn-default btn-circle btn-lg" ><i class="glyphicon glyphicon-plus" aria-hidden="true"></i></button>
+                </p>
+              </a>
+              {% endif %}
+            </div>
+            <div class="card-body pr-2 pl-2 pr-2 mr-2">
+              <h5 class="card-title ml-4">{{ project_item.project_title }}</h5>
+              <div class="row ml-2">
+                <div class="col-lg-6 dark-text"> <small> <span class="mr-1"> From {{project_item.country.name}}</span>  </small> </div>
+                <div class="col-lg-6 dark-text d-flex justify-content-end"> <small> {{project_item.pub_date|date:"d /m/Y"}} </small> </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted ml-2"><img src="{{ project_item.Author.profile.photo.url }}" alt="" class="rounded-circle img-fluid mr-1" style="width: 30px;">
+              BY <b>{{project_item.Author.first_name|upper}}</b> </small>
+            </div>
+          </div>
+        </div>
+        <!-- end of card deck  -->
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
