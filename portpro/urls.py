@@ -17,11 +17,11 @@ from django.conf.urls import url,include
 from django.contrib import admin
 from django.contrib.auth import views
 from registration.backends.simple.views import RegistrationView
-from awwardapp.forms import RegisterForm
+from portapp.forms import RegisterForm
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', include('awwardapp.urls')),
+    url(r'', include('portapp.urls')),
     url(r'^accounts/register/$',
         RegistrationView.as_view(
             form_class=RegisterForm

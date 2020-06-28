@@ -5,4 +5,4 @@ class PortappConfig(AppConfig):
     name = 'portapp'
 
     def ready(self):
-        import awwardapp.signals
+        import portapp.signals

@@ -1,7 +1,7 @@
 from django.test import TestCase
-from .models import Profile,Project
 from django.core.files.uploadedfile import SimpleUploadedFile
 import datetime as dt
+from .models import Profile,Projects
 
 # Create your tests here.
 
@@ -25,7 +25,7 @@ class ProjectTest(TestCase):
   def setUp(self):
     
     self.new_project = Project(title = "KKK",description = "We are a family",live_site = "amazing,org",profile = self.user_kim.profile, pub_date=dt.date.today())
-    self.new_project.landing_page = SimpleUploadedFile(name='west.jpg',content=open('/home/martin/Documents/Moringa-Core/Django/awward/media/west.jpg','rb').read(),content_type='image/jpeg')
+    self.new_project.landing_page = SimpleUploadedFile(name='west.jpg',content=open('/home/martin/Documents/Moringa-Core/Django/MyPortfolio/media/west.jpg','rb').read(),content_type='image/jpeg')
 
     self.new_project.save()
 
