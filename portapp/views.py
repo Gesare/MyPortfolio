@@ -17,8 +17,6 @@ from .serializer import ProfileSerializer, ProjectSerializer
 def index(request):
     date = dt.date.today()
     projects = Projects.get_projects()
-    
-
     return render(request, 'index.html', {"date": date, "projects":projects})
 
 
