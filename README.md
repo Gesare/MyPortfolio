@@ -1,8 +1,10 @@
 # MyPortfolio
 This is a basic website that has information about me.Information like name,education and some of the projects i have done.
 ### By Gesare Ombati.
+
 ## Description
-This page was coded in Html and css .It i have made use of some tags eg li,ol,em,strong,head,h1 and h2.The webpage has a information about me and my education background and about me .It also has a link to some of the work i have done and information on my hobbies.
+This page was coded in Html and css (with the help of a template).It i have made use of some tags eg li,ol,em,strong,head,h1 and h2.The webpage has a information about me and my education background and about me .It also has a link to some of the work i have done and information on my hobbies.
+
 ## Setup/Installation Requirements
 * This is a great place
 * to list setup instructions
